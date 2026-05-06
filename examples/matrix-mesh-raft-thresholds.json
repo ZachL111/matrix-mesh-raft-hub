@@ -1,0 +1,17 @@
+{
+  "repo": "matrix-mesh-raft-hub",
+  "thresholds": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 2,
+    "drag": 4,
+    "ship": 197,
+    "watch": 120
+  },
+  "terms": [
+    "quorum health",
+    "lease drift",
+    "replica lag",
+    "membership churn"
+  ]
+}
