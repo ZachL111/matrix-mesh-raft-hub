@@ -1,0 +1,73 @@
+{
+  "repo": "matrix-mesh-raft-hub",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for raft diagnostic reporting, using negative fixtures and human-readable error snapshots.",
+  "review_model": {
+    "terms": [
+      "quorum health",
+      "lease drift",
+      "replica lag",
+      "membership churn"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "quorum health",
+      "signal": 51,
+      "slack": 50,
+      "drag": 8,
+      "confidence": 90,
+      "score": 218,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lease drift",
+      "signal": 49,
+      "slack": 32,
+      "drag": 24,
+      "confidence": 56,
+      "score": 114,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "replica lag",
+      "signal": 46,
+      "slack": 25,
+      "drag": 23,
+      "confidence": 85,
+      "score": 133,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "membership churn",
+      "signal": 79,
+      "slack": 24,
+      "drag": 32,
+      "confidence": 92,
+      "score": 178,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "quorum health",
+      "signal": 76,
+      "slack": 24,
+      "drag": 22,
+      "confidence": 94,
+      "score": 204,
+      "lane": "ship"
+    }
+  ]
+}
