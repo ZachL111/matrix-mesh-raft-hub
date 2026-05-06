@@ -1,0 +1,32 @@
+{
+  "index": 382,
+  "phase": 2,
+  "batch": 43,
+  "name": "matrix-mesh-raft-hub",
+  "planned_name": "matrix-mesh-raft-hub",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for raft diagnostic reporting, using negative fixtures and human-readable error snapshots.",
+  "repository_url": "https://github.com/ZachL111/matrix-mesh-raft-hub",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 154,
+    "risk_penalty": 7,
+    "latency_penalty": 3,
+    "weight_bonus": 5,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
